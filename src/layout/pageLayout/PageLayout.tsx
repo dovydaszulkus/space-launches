@@ -1,5 +1,7 @@
 import ContentWrapper from '@/components/common/ContentWrapper/ContentWrapper'
 import Heading from '@/components/common/Heading/Heading'
+import Loader from '@/components/common/Loader/Loader'
+import Errors from '@/components/Errors/Errors'
 import { VariantType } from '@/types'
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles, MainStyled } from './styles'
@@ -26,9 +28,15 @@ export default function PageLayout({
         <GlobalStyles />
         <MainStyled>
           <section>
-            {showLoading ? <p>Loading...</p> : null}
+            {showLoading ? (
+              <ContentWrapper variant={contentBackgroundVariant} center>
+                <Loader show={true} delay={400} />
+              </ContentWrapper>
+            ) : null}
             {showError ? (
-              <p>Something went wrong and the page could not be loaded...</p>
+              <ContentWrapper variant={contentBackgroundVariant}>
+                <Errors />
+              </ContentWrapper>
             ) : null}
             {showContent && (
               <>
