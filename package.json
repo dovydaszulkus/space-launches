@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^6.5.12",
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
@@ -73,6 +74,7 @@
     "cypress": "^10.8.0",
     "prettier": "^2.7.1",
     "prop-types": "^15.8.1",
+    "storybook-addon-react-router-v6": "^0.2.1",
     "webpack": "^5.74.0"
   }
 }
