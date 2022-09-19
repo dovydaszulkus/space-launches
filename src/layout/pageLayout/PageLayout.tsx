@@ -9,22 +9,35 @@ export default function PageLayout({
   pageBackgroundVariant,
   contentBackgroundVariant,
   children,
+  showError,
+  showLoading,
 }: {
   headingText: string
   pageBackgroundVariant: VariantType
   contentBackgroundVariant: VariantType
   children: React.ReactNode
+  showError: boolean
+  showLoading: boolean
 }) {
+  const showContent = !showLoading && !showError
   return (
     <>
       <ThemeProvider theme={{ pageBackgroundVariant }}>
         <GlobalStyles />
         <MainStyled>
           <section>
-            <Heading text={headingText} />
-            <ContentWrapper variant={contentBackgroundVariant}>
-              {children}
-            </ContentWrapper>
+            {showLoading ? <p>Loading...</p> : null}
+            {showError ? (
+              <p>Something went wrong and the page could not be loaded...</p>
+            ) : null}
+            {showContent && (
+              <>
+                <Heading text={headingText} />
+                <ContentWrapper variant={contentBackgroundVariant}>
+                  {children}
+                </ContentWrapper>
+              </>
+            )}
           </section>
         </MainStyled>
       </ThemeProvider>
