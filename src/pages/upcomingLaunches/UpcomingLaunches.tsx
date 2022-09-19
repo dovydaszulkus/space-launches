@@ -4,9 +4,9 @@ import PageLayout from '@/layout/pageLayout/PageLayout'
 import useFetch from '@/hooks/useFetch'
 import Bookmark from '@/services/Bookmark'
 import { buildLaunchpadData, buildUpcomingLaunchesData } from './utils'
-import { Table } from './styles'
 import { endpoints } from '@/constants/endpoints'
 import { getHumanReadableDateInUTC } from '@/helpers/dateTime'
+import Table from '@/components/common/Table/Table'
 
 export default function UpcomingLaunches() {
   const [bookmarks, setBookmarks] = useState<any>({})
@@ -56,25 +56,25 @@ export default function UpcomingLaunches() {
     >
       <ContentWrapper variant="secondary">
         <Table>
-          <thead>
-            <tr>
-              <th>Mission</th>
-              <th>Date (UTC)</th>
-              <th>Launchpad</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
+          <Table.Thead>
+            <Table.Tr>
+              <Table.Th>Mission</Table.Th>
+              <Table.Th>Date (UTC)</Table.Th>
+              <Table.Th>Launchpad</Table.Th>
+              <Table.Th>Actions</Table.Th>
+            </Table.Tr>
+          </Table.Thead>
+          <Table.Tbody>
             {upcomingLaunchesData.map((upcomingLaunch: any) => {
               const { name, date_utc, launchpad, id } = upcomingLaunch
               const bookmarkExists = bookmarks[id]
 
               return (
-                <tr key={id}>
-                  <td>{name}</td>
-                  <td>{getHumanReadableDateInUTC(date_utc)}</td>
-                  <td>{launchpad}</td>
-                  <td>
+                <Table.Tr key={id}>
+                  <Table.Td>{name}</Table.Td>
+                  <Table.Td>{getHumanReadableDateInUTC(date_utc)}</Table.Td>
+                  <Table.Td>{launchpad}</Table.Td>
+                  <Table.Td>
                     <button
                       type="button"
                       disabled={bookmarkExists}
@@ -84,11 +84,11 @@ export default function UpcomingLaunches() {
                         ? 'Already bookmarked'
                         : 'Add to bookmarks'}
                     </button>
-                  </td>
-                </tr>
+                  </Table.Td>
+                </Table.Tr>
               )
             })}
-          </tbody>
+          </Table.Tbody>
         </Table>
       </ContentWrapper>
     </PageLayout>

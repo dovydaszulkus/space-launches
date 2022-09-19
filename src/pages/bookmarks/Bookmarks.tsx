@@ -4,6 +4,7 @@ import PageLayout from '@/layout/pageLayout/PageLayout'
 import Bookmark from '@/services/Bookmark'
 import Table from '@/components/common/Table/Table'
 import { InfoMessage } from './styles'
+import { getHumanReadableDateInUTC } from '@/helpers/dateTime'
 
 export default function Bookmarks() {
   const [bookmarks, setBookmarks] = useState({})
@@ -47,7 +48,7 @@ export default function Bookmarks() {
                 return (
                   <Table.Tr key={id}>
                     <Table.Td>{name}</Table.Td>
-                    <Table.Td>{date_utc}</Table.Td>
+                    <Table.Td>{getHumanReadableDateInUTC(date_utc)}</Table.Td>
                     <Table.Td>{launchpad}</Table.Td>
                     <Table.Td>
                       <button type="button" onClick={() => deleteBookmark(id)}>
