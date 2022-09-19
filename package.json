@@ -47,7 +47,9 @@
   "jest": {
     "moduleNameMapper": {
       "^@root(.*)$": "<rootDir>/src$1",
-      "^@/config(.*)$": "<rootDir>/src/config$1"
+      "^@/config(.*)$": "<rootDir>/src/config$1",
+      "^@/components(.*)$": "<rootDir>/src/components$1",
+      "^@/styles(.*)$": "<rootDir>/src/styles$1"
     },
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
