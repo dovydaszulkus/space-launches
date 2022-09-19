@@ -23,7 +23,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test --coverage",
+    "test": "craco test --coverage --watchAll",
     "eject": "craco eject",
     "cypress": "cypress open",
     "cypress:run": "cypress run",
@@ -51,7 +51,8 @@
       "^@root(.*)$": "<rootDir>/src$1",
       "^@/config(.*)$": "<rootDir>/src/config$1",
       "^@/components(.*)$": "<rootDir>/src/components$1",
-      "^@/styles(.*)$": "<rootDir>/src/styles$1"
+      "^@/styles(.*)$": "<rootDir>/src/styles$1",
+      "^@/assets(.*)$": "<rootDir>/src/assets$1"
     },
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
