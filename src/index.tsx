@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './index.css'
 import Header from './layout/header/Header'
 import Home from './pages/home/Home'
+import UpcomingLaunches from './pages/upcomingLaunches/UpcomingLaunches'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -12,6 +13,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/upcoming-launches" element={<UpcomingLaunches />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

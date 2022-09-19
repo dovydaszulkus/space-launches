@@ -5,7 +5,7 @@ const localCache: { [key: string]: any } = {}
 type Status = 'IDLE' | 'LOADING' | 'SUCCESS' | 'ERROR'
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState<any>({})
+  const [data, setData] = useState<any>([])
   const [status, setStatus] = useState<Status>('IDLE')
   const [error, setError] = useState(false)
 
