@@ -20,6 +20,10 @@ module.exports = {
       '@/config': path.resolve(__dirname, '../src/config'),
       '@/components': path.resolve(__dirname, '../src/components'),
       '@/styles': path.resolve(__dirname, '../src/styles'),
+      '@/assets': path.resolve(__dirname, '../src/assets'),
+      '@/layout': path.resolve(__dirname, '../src/layout'),
+      '@/services': path.resolve(__dirname, '../src/services'),
+      '@/helpers': path.resolve(__dirname, '../src/helpers'),
     }
 
     return config
