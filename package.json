@@ -23,10 +23,10 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test --coverage --watchAll",
+    "test:unit": "craco test --coverage --watchAll",
     "eject": "craco eject",
     "cypress": "cypress open",
-    "cypress:run": "cypress run",
+    "test:e2e": "cypress run",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
